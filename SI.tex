@@ -1,0 +1,411 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Supporting Information
+%% Optical Thermometry in Monolayer WS2: Raman and PL Spectroscopy, 5 K to 1273 K
+%% Draft v1 — G. Lee
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+
+\usepackage{chemformula}
+\usepackage[version=4]{mhchem}
+
+\usepackage[style=chem-acs]{biblatex}
+\addbibresource{references.bib}
+
+% SI figure numbering: S1, S2, ...
+\renewcommand{\thefigure}{S\arabic{figure}}
+\setcounter{figure}{0}
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{table}{0}
+
+\usepackage{authblk}
+\author[1]{G. Lee}
+\author[1]{A. Borel}
+\author[2]{T. Taniguchi}
+\author[3]{K. Watanabe}
+\author[1]{F. Sirotti}
+\author[1]{F. Cadiz}
+
+\affil[1]{Laboratoire de Physique de la Matière Condensée, CNRS,
+Ecole polytechnique, Institut Polytechnique de Paris, 91120 Palaiseau, France}
+\affil[2]{International Center for Materials Nanoarchitectonics, National Institute for
+Materials Science, 1-1 Namiki, Tsukuba 305-0044, Japan}
+\affil[3]{Research Center for Functional Materials, National Institute for Materials
+Science, 1-1 Namiki, Tsukuba 305-0044, Japan}
+
+\title{Supporting Information\\[0.3em]
+Optical Thermometry in Monolayer \ce{WS2}: Raman and
+Photoluminescence Spectroscopy from 5~K to 1273~K}
+
+\date{*Email: fabian.cadiz@polytechnique.edu}
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{S1. Raman: Individual (E$^1_{2g}$, 2LA) versus Merged-Peak Fitting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In addition to the A$_{1g}$($\Gamma$) mode used as the primary thermometer in
+the main text, the E$^1_{2g}$($\Gamma$) and 2LA(M) modes ($\sim$351 and
+$\sim$347~cm$^{-1}$ at room temperature, respectively) were tracked as a
+function of temperature for both samples. These two modes sit only
+$\sim$5~cm$^{-1}$ apart at room temperature and broaden and redshift with
+increasing temperature, so that they progressively overlap and become
+difficult to resolve individually. Each dataset was fitted two ways: (i) as
+two independent Lorentzian peaks (individual fit), and (ii) as a single
+Lorentzian standing in for the unresolved pair (merged fit).
+
+\textbf{Non-encapsulated sample.} Figure~\ref{fig:s1}(a,b) shows the
+individually-fitted E$^1_{2g}$ and 2LA positions versus temperature. Both
+peaks are well resolved and the individual fits are stable across the full
+range; linear fits restricted to $T \geq 600$~K give slopes of
+$-0.0174~\mathrm{cm^{-1}/K}$ (E$^1_{2g}$) and $-0.0137~\mathrm{cm^{-1}/K}$
+(2LA). Figure~\ref{fig:s1}(c) shows the merged-peak fit, which is flatter
+below $\sim$500~K and only becomes clearly linear at higher temperature; a
+linear fit restricted to $T \geq 500$~K yields
+$-0.0179 \pm 0.0002~\mathrm{cm^{-1}/K}$ ($R^2 = 0.998$, $n = 15$) -- consistent
+with the individual-peak slopes, since the non-encapsulated sample's
+individual fits are already well-behaved.
+
+\textbf{hBN-encapsulated sample.} Figure~\ref{fig:s1}(d,e) shows that the
+individual fit is far less reliable for this sample: above $\sim$900~K, the
+optimizer is prone to bound-splitting artifacts and chain-drift, and the
+E$^1_{2g}$ position visibly deviates from a physical monotonic redshift (it
+even turns upward in Fig.~\ref{fig:s1}(d)), with error bars several times
+larger than at low temperature. This motivates treating E$^1_{2g}$ and 2LA
+as a single merged Lorentzian peak for this sample
+(Figure~\ref{fig:s1}(f)), which gives a more stable, if less precise,
+position estimate. A pooled linear fit over $T \geq 100$~K (combining all
+four measurement stages: LT, cooldown, 1st heat-up, 2nd heat-up) yields a
+slope of $-0.0104 \pm 0.0006~\mathrm{cm^{-1}/K}$ ($R^2 = 0.909$, $n = 30$),
+consistent in sign and order of magnitude with the non-encapsulated result.
+
+This fit should not, however, be read as a quantitative calibration for the
+encapsulated sample. Three features of the data argue against it. First, the
+intensity redistribution described in the main text removes the doublet
+entirely between $\sim$373~K and $\sim$923~K, so the fit spans a 550~K gap and
+is effectively constrained by two separated clusters of points rather than by
+a continuous trend. Second, below $\sim$400~K the merged position is not
+monotonic: it rises from $349.1$ to $350.9~\mathrm{cm^{-1}}$ between 5~K and
+293~K before decreasing again. Third, repeated acquisitions at the same
+nominal temperature differ by up to $2.3~\mathrm{cm^{-1}}$ at high
+temperature, several times the corresponding fit uncertainty
+($\sim$0.4~cm$^{-1}$), indicating that the merged position is not reproducible
+at that level.
+
+The E$^1_{2g}$+2LA doublet is therefore used only as a qualitative,
+sign-and-order-of-magnitude check. For the non-encapsulated sample it provides
+a usable secondary indicator above $\sim$500~K; for the encapsulated sample no
+quantitative slope is claimed. In neither case is it proposed as a thermometer
+in place of the A$_{1g}$ mode used in the main text.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.31\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS1a_nonencap_E2g.png}
+    \\ (a)
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.31\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS1b_nonencap_2LA.png}
+    \\ (b)
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.31\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS1c_nonencap_merged.png}
+    \\ (c)
+  \end{minipage}
+
+  \vspace{0.8em}
+  \begin{minipage}{0.31\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS1d_encap_E2g.png}
+    \\ (d)
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.31\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS1e_encap_2LA.png}
+    \\ (e)
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.31\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS1f_encap_merged.png}
+    \\ (f)
+  \end{minipage}
+  \caption{Individual versus merged-peak fitting of the E$^1_{2g}$+2LA
+    doublet. Top row: non-encapsulated sample -- (a) E$^1_{2g}$ individual
+    fit, (b) 2LA individual fit, (c) merged-peak fit ($T \geq 500$~K linear
+    fit shown). Bottom row: hBN-encapsulated sample -- (d) E$^1_{2g}$
+    individual fit, (e) 2LA individual fit, both showing instability above
+    $\sim$900~K, (f) merged-peak fit, pooled linear fit over
+    $T \geq 100$~K across all four measurement stages.}
+  \label{fig:s1}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{S2. Temperature-Dependent Raman Spectra of hBN-Encapsulated \ce{WS2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure~\ref{fig:s2} shows the Raman spectra of the hBN-encapsulated \ce{WS2}
+monolayer over the full measured temperature range, combining the low-temperature
+(5~K to 295~K) and high-temperature (RT to 1000~$^\circ$C) datasets. The
+reduced signal intensity compared to the non-encapsulated sample is evident.
+Data points where the peak position could not be reliably extracted are excluded
+from the analysis.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS2a_LT_waterfall.png}
+    \\ (a)
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS2b_HT_2Dmap.png}
+    \\ (b)
+  \end{minipage}
+
+  \vspace{0.8em}
+  \begin{minipage}{0.6\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS2c_A1g_encap_vs_T.png}
+    \\ (c)
+  \end{minipage}
+  \caption{Temperature-dependent Raman spectra of hBN-encapsulated monolayer
+    \ce{WS2}.
+    (a) Low-temperature spectra from 5~K to 295~K (cryostat stage).
+    (b) High-temperature spectra from RT to 1000~$^\circ$C (micro-heater stage).
+    The reduced signal intensity compared to the non-encapsulated sample
+    (main text Fig.~2) results in missing data points at certain temperatures.
+    (c) A$_{1g}$ peak position of the encapsulated sample versus temperature.
+    The solid line is the linear fit from the non-encapsulated data (main text),
+    demonstrating the consistency between both datasets.}
+  \label{fig:s2}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{S3. Comparison of Bandgap Temperature Models}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Three empirical and semi-empirical models for the temperature dependence of
+the bandgap energy were fitted to the neutral-exciton peak energy $E_0(T)$
+extracted from Voigt fits of the PL spectra. The main text uses the Pässler
+model (Eq.~2); the two alternative models below are compared against it here.
+
+\textbf{Varshni model (1967) \cite{varshni-1967}:}
+\begin{equation}
+E(T) = E_0 - \frac{\alpha T^2}{T + \beta},
+\end{equation}
+where $E_0$ is the zero-temperature bandgap, $\alpha$ is the
+electron--phonon coupling constant (eV/K), and $\beta$ is an effective Debye
+temperature (K). This model is purely empirical and does not reduce to the
+correct zero-temperature curvature.
+
+\textbf{O'Donnell--Chen model (1991) \cite{odonnell-1991}:}
+\begin{equation}
+E(T) = E_0 - S \hbar\omega
+\left[ \coth\!\left(\frac{\hbar\omega}{2 k_B T}\right) - 1 \right],
+\end{equation}
+where $S$ is a dimensionless Huang--Rhys-like electron--phonon coupling
+strength and $\hbar\omega$ is the mean phonon energy. At high temperature this
+model is linear in $T$, with slope $2 S k_B$.
+
+Figure~\ref{fig:s3} shows all three model fits (Pässler included for
+reference) to the data together with the corresponding residuals. The fitted
+parameters and goodness-of-fit metrics are summarized in
+Table~\ref{tab:s1}. The Varshni model systematically overestimates the
+energy at low temperature, while both the Pässler and O'Donnell--Chen
+models -- which share the same physically-motivated saturation to a
+temperature-independent phonon population at low $T$ -- reproduce the data
+to within the experimental uncertainty over the full range.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS3a_E0_model_combined.png}
+    \\ (a)
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS3b_E0_model_residuals.png}
+    \\ (b)
+  \end{minipage}
+  \caption{Comparison of bandgap temperature models fitted to the
+    neutral-exciton peak energy of hBN-encapsulated \ce{WS2}.
+    (a) Experimental $E_0(T)$ (symbols) and fits using the Varshni
+    (dashed red), Pässler (solid blue), and O'Donnell--Chen (dash-dot orange)
+    models.
+    (b) Fit residuals (data $-$ model) in meV for each model, showing that the
+    Varshni model systematically overestimates the energy at low temperature,
+    while both the Pässler and O'Donnell--Chen models fit the data to within the
+    experimental uncertainty over the full range.}
+  \label{fig:s3}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Fitted parameters and goodness-of-fit metrics for the three
+    bandgap temperature models (weighted least-squares fit to the
+    neutral-exciton $X_A^0$ peak energy).}
+  \label{tab:s1}
+  \begin{tabular}{lccccc}
+    \toprule
+    Model & $E_0(0)$ (eV) & $\alpha$ (eV/K) & Parameter 3 & $R^2$ & RMSE (meV) \\
+    \midrule
+    Varshni & $2.0578 \pm 0.0037$ & $(3.908 \pm 0.116)\times10^{-4}$ & $\beta = 185.2 \pm 41.4$~K & 0.9952 & 9.18 \\
+    Pässler & $2.0491 \pm 0.0036$ & $(3.741 \pm 0.069)\times10^{-4}$ & $\Theta = 280.1 \pm 28.8$~K, $p = 4.04 \pm 2.23$ & 0.9964 & 7.94 \\
+    O'Donnell--Chen & $2.0514 \pm 0.0034$ & --- & $S = 2.210 \pm 0.038$, $\hbar\omega = 27.3 \pm 3.4$~meV & 0.9961 & 8.34 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{S4. Voigt Fitting Procedure and Quality Assessment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+At each temperature, the PL spectrum in the energy range 1.50--2.12~eV was
+fitted with a pseudo-Voigt profile:
+
+\begin{equation}
+\label{eq:voigt}
+I(E) = I_0 \left[ \eta \, L(E; E_0, \gamma) + (1-\eta) \, G(E; E_0, \sigma) \right]
++ B,
+\end{equation}
+
+where $L$ and $G$ are normalized Lorentzian and Gaussian profiles centered at
+$E_0$, $\eta \in [0,1]$ is the Lorentzian fraction, $\gamma$ and $\sigma$ are
+the half-widths, and $B$ is a local background. The total Voigt FWHM is
+approximated by \cite{thompson-1987}:
+
+\begin{equation}
+\Gamma_V \approx 0.5346\,\Gamma_L
++ \sqrt{0.2166\,\Gamma_L^2 + \Gamma_G^2},
+\end{equation}
+
+where $\Gamma_L = 2\gamma$ and $\Gamma_G = 2\sqrt{2\ln 2}\,\sigma$ are the
+Lorentzian and Gaussian FWHMs, respectively.
+
+Figure~\ref{fig:s4} shows representative Voigt fits at selected temperatures
+spanning the full range. The fitting residuals are shown in the lower panels.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\linewidth]{Figures/figS4_fit_quality_grid.png}
+  \caption{Representative pseudo-Voigt fits (solid lines) to the PL spectra
+    (symbols) of hBN-encapsulated \ce{WS2} at selected temperatures. The
+    Gaussian and Lorentzian components are shown as dashed blue and red lines,
+    respectively. Residuals are shown below each panel.}
+  \label{fig:s4}
+\end{figure}
+
+Note: the Gaussian and Lorentzian widths are strongly correlated in the fit,
+and at several temperatures the optimizer converges to a bound, so that the
+individual components are not reliably determined. Only the total Voigt
+width is reported (Sec.~S5). The peak position $E_0$ is robust to this
+degeneracy and all points are retained in the $E_0(T)$ dataset.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{S5. Photoluminescence Linewidth and Integrated Intensity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure~\ref{fig:s5}(a) shows the total Voigt FWHM $\Gamma_V$ of the $X_A^0$
+emission as a function of temperature. The linewidth increases monotonically
+from $\sim$5.3~meV at 5~K to $\sim$140~meV at 1273~K, consistent with an
+increasing phonon-scattering-limited dephasing rate. The decomposition of
+the pseudo-Voigt profile (Eq.~\ref{eq:voigt}, Sec.~S4) into its Gaussian
+($\Gamma_G$) and Lorentzian ($\Gamma_L$) contributions is not reported here:
+the two components are strongly correlated in the fit and are not
+individually well determined over much of the temperature range.
+
+Figure~\ref{fig:s5}(b) shows the integrated PL intensity of $X_A^0$. The
+emission is weak below $\sim$40~K and then rises by roughly two orders of
+magnitude up to $\sim$175~K. This behaviour is characteristic of
+tungsten-based monolayer TMDs, in which the lowest-lying exciton state is
+spin-forbidden (dark) and sits a few tens of meV below the bright state
+\cite{zhang-2015,molas-2017}: at low temperature carriers relax into the
+dark state and bright emission is quenched, while increasing temperature
+thermally activates the bright-state population. Above $\sim$175~K the
+intensity decreases again, consistent with thermally activated non-radiative
+recombination \cite{korn-2011} and with the thermal escape of excitons from
+the radiative window \cite{robert-2016}. Above $\sim$800~K the extracted intensity is
+no longer a faithful measure of the emission strength, since the strongly
+broadened peak extends beyond the low-energy edge of the fitting window
+(1.50~eV) and its integrated area cannot be reliably determined. The peak
+\emph{position} is unaffected by this truncation, since the emission
+maximum remains well inside the fitting window at all temperatures.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS5a_FWHM_decomp.png}
+    \\ (a)
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/figS5b_eta_intensity.png}
+    \\ (b)
+  \end{minipage}
+  \caption{Temperature dependence of the PL linewidth and intensity.
+    (a) Total Voigt FWHM $\Gamma_V$ of the $X_A^0$ emission versus
+    temperature.
+    (b) Integrated $X_A^0$ PL intensity versus temperature, showing the
+    thermally activated rise from the dark-exciton ground state below
+    $\sim$175~K and the subsequent thermal quenching at higher temperature.}
+  \label{fig:s5}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{S6. Thermal Dissociation of \ce{WS2} Monolayer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Figure~\ref{fig:s6} shows optical images of the non-encapsulated sample on the
+SiC membrane before and after thermal treatment at 1000~$^\circ$C. After this
+treatment no \ce{WS2} Raman signal was detectable, and the monolayer is absent
+from the membrane under white-light illumination, consistent with thermal
+dissociation through sulfur sublimation \cite{brainard-1968}. The
+hBN-encapsulated sample, by contrast, remained intact after the same
+treatment, with both Raman and PL still measurable at 1273~K. Thermal
+dissociation therefore sets the practical upper bound for optical thermometry
+on bare monolayers at $\sim$1273~K, while the encapsulated heterostructure was
+limited here only by the operating range of the heater chip.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{Figures/dissociation.png}
+  \caption{Thermal dissociation of monolayer \ce{WS2}.
+    Optical images of the SiC membrane (a) before annealing, showing an
+    exfoliated \ce{WS2} monolayer flake (dashed outline), and (b) after
+    annealing to 1000~$^\circ$C. The \ce{WS2} monolayer is no longer visible,
+    confirming thermal dissociation near 1273~K through loss of sulfur species.}
+  \label{fig:s6}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

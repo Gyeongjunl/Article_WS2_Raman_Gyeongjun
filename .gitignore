@@ -1,0 +1,26 @@
+# LaTeX 중간 산물 (pdflatex/biber가 재생성)
+*.aux
+*.bcf
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# 피규어 원본 pptx (합계 51M, 바이너리라 커밋마다 통째로 쌓임)
+*.pptx
+
+# Office 잠금 파일
+~$*
+
+# macOS
+.DS_Store
+
+# 에디터
+.vscode/
