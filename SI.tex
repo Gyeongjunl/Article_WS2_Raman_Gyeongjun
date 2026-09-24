@@ -12,6 +12,12 @@
 \geometry{margin=1in}
 
 \usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{soul}
+% Revision highlight for FC review; to remove, redefine as \newcommand{\rev}[1]{#1}
+\definecolor{revgreen}{RGB}{160,255,160}
+\sethlcolor{revgreen}
+\DeclareRobustCommand{\rev}[1]{\hl{#1}}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{booktabs}
@@ -64,7 +70,7 @@ $\sim$347~cm$^{-1}$ at room temperature, respectively) were tracked as a
 function of temperature for both samples. These two modes sit only
 $\sim$5~cm$^{-1}$ apart at room temperature and broaden and redshift with
 increasing temperature, so that they progressively overlap and become
-difficult to resolve individually. Each dataset was fitted two ways: (i) as
+difficult to resolve individually. Each dataset was fitted \rev{in two ways}: (i) as
 two independent Lorentzian peaks (individual fit), and (ii) as a single
 Lorentzian standing in for the unresolved pair (merged fit).
 
@@ -88,9 +94,10 @@ even turns upward in Fig.~\ref{fig:s1}(d)), with error bars several times
 larger than at low temperature. This motivates treating E$^1_{2g}$ and 2LA
 as a single merged Lorentzian peak for this sample
 (Figure~\ref{fig:s1}(f)), which gives a more stable, if less precise,
-position estimate. A pooled linear fit over $T \geq 100$~K (combining all
+position estimate. A pooled linear fit over \rev{$T \geq 250$~K, below which the merged position
+does not decrease with temperature} (combining all
 four measurement stages: LT, cooldown, 1st heat-up, 2nd heat-up) yields a
-slope of $-0.0104 \pm 0.0006~\mathrm{cm^{-1}/K}$ ($R^2 = 0.909$, $n = 30$),
+slope of \rev{$-0.0114 \pm 0.0007~\mathrm{cm^{-1}/K}$ ($R^2 = 0.915$, $n = 24$)},
 consistent in sign and order of magnitude with the non-encapsulated result.
 
 This fit should not, however, be read as a quantitative calibration for the
@@ -114,49 +121,14 @@ in place of the A$_{1g}$ mode used in the main text.
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}{0.31\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS1a_nonencap_E2g.png}
-    \\ (a)
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.31\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS1b_nonencap_2LA.png}
-    \\ (b)
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.31\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS1c_nonencap_merged.png}
-    \\ (c)
-  \end{minipage}
-
-  \vspace{0.8em}
-  \begin{minipage}{0.31\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS1d_encap_E2g.png}
-    \\ (d)
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.31\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS1e_encap_2LA.png}
-    \\ (e)
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.31\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS1f_encap_merged.png}
-    \\ (f)
-  \end{minipage}
+  \includegraphics[width=\linewidth]{Figures/figS1.png}
   \caption{Individual versus merged-peak fitting of the E$^1_{2g}$+2LA
     doublet. Top row: non-encapsulated sample -- (a) E$^1_{2g}$ individual
     fit, (b) 2LA individual fit, (c) merged-peak fit ($T \geq 500$~K linear
     fit shown). Bottom row: hBN-encapsulated sample -- (d) E$^1_{2g}$
     individual fit, (e) 2LA individual fit, both showing instability above
     $\sim$900~K, (f) merged-peak fit, pooled linear fit over
-    $T \geq 100$~K across all four measurement stages.}
+    \rev{$T \geq 250$~K} across all four measurement stages.}
   \label{fig:s1}
 \end{figure}
 
@@ -166,41 +138,25 @@ in place of the A$_{1g}$ mode used in the main text.
 
 Figure~\ref{fig:s2} shows the Raman spectra of the hBN-encapsulated \ce{WS2}
 monolayer over the full measured temperature range, combining the low-temperature
-(5~K to 295~K) and high-temperature (RT to 1000~$^\circ$C) datasets. The
-reduced signal intensity compared to the non-encapsulated sample is evident.
+(5~K to 295~K) and high-temperature (RT to \rev{1273~K}) datasets.
 Data points where the peak position could not be reliably extracted are excluded
-from the analysis.
+from the analysis. \rev{The A$_{1g}$ positions from the cooldown and the two
+heat-up stages scatter around the same line} (Figure~\ref{fig:s2}(b))\rev{, with
+stage-to-stage differences of up to $\sim$0.8~cm$^{-1}$ but no consistent
+offset between heating and cooling.}
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS2a_LT_waterfall.png}
-    \\ (a)
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS2b_HT_2Dmap.png}
-    \\ (b)
-  \end{minipage}
-
-  \vspace{0.8em}
-  \begin{minipage}{0.6\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS2c_A1g_encap_vs_T.png}
-    \\ (c)
-  \end{minipage}
-  \caption{Temperature-dependent Raman spectra of hBN-encapsulated monolayer
-    \ce{WS2}.
-    (a) Low-temperature spectra from 5~K to 295~K (cryostat stage).
-    (b) High-temperature spectra from RT to 1000~$^\circ$C (micro-heater stage).
-    The reduced signal intensity compared to the non-encapsulated sample
-    (main text Fig.~2) results in missing data points at certain temperatures.
-    (c) A$_{1g}$ peak position of the encapsulated sample versus temperature.
-    The solid line is the linear fit from the non-encapsulated data (main text),
-    demonstrating the consistency between both datasets.}
-  \label{fig:s2}
+  \includegraphics[width=\linewidth]{Figures/figS2.png}
+  \caption{\rev{Temperature-dependent Raman response of the hBN-encapsulated}
+    \ce{WS2} \rev{monolayer. (a) Two-dimensional map of Raman intensity versus
+    temperature (5--1273~K) and Raman shift; the dashed line marks the
+    boundary between the cryostat (5~K--RT) and micro-heater (RT--1273~K)
+    stages. (b) A$_{1g}$ peak position versus temperature for each
+    measurement stage. The solid line is a linear fit to this sample over
+    $T \geq 100$~K ($-0.0121$~cm$^{-1}$/K), as used in the main text; cooldown
+    and heat-up data scatter around the same line.}}
+\label{fig:s2}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -270,13 +226,21 @@ to within the experimental uncertainty over the full range.
     bandgap temperature models (weighted least-squares fit to the
     neutral-exciton $X_A^0$ peak energy).}
   \label{tab:s1}
-  \begin{tabular}{lccccc}
+  % Transposed (models as columns) so the table fits the text width.
+  \begin{tabular}{lccc}
     \toprule
-    Model & $E_0(0)$ (eV) & $\alpha$ (eV/K) & Parameter 3 & $R^2$ & RMSE (meV) \\
+     & Varshni & Pässler & O'Donnell--Chen \\
     \midrule
-    Varshni & $2.0578 \pm 0.0037$ & $(3.908 \pm 0.116)\times10^{-4}$ & $\beta = 185.2 \pm 41.4$~K & 0.9952 & 9.18 \\
-    Pässler & $2.0491 \pm 0.0036$ & $(3.741 \pm 0.069)\times10^{-4}$ & $\Theta = 280.1 \pm 28.8$~K, $p = 4.04 \pm 2.23$ & 0.9964 & 7.94 \\
-    O'Donnell--Chen & $2.0514 \pm 0.0034$ & --- & $S = 2.210 \pm 0.038$, $\hbar\omega = 27.3 \pm 3.4$~meV & 0.9961 & 8.34 \\
+    $E_0(0)$ (eV)             & $2.0578 \pm 0.0037$ & $2.0491 \pm 0.0036$ & $2.0514 \pm 0.0034$ \\
+    $\alpha$ ($10^{-4}$ eV/K) & $3.908 \pm 0.116$   & $3.741 \pm 0.069$   & --- \\
+    $\beta$ (K)               & $185.2 \pm 41.4$    & ---                 & --- \\
+    $\Theta$ (K)              & ---                 & $280.1 \pm 28.8$    & --- \\
+    $p$                       & ---                 & $4.04 \pm 2.23$     & --- \\
+    $S$                       & ---                 & ---                 & $2.210 \pm 0.038$ \\
+    $\hbar\omega$ (meV)       & ---                 & ---                 & $27.3 \pm 3.4$ \\
+    \midrule
+    $R^2$                     & 0.9952              & 0.9964              & 0.9961 \\
+    RMSE (meV)                & 9.18                & 7.94                & 8.34 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -285,39 +249,43 @@ to within the experimental uncertainty over the full range.
 \section*{S4. Voigt Fitting Procedure and Quality Assessment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-At each temperature, the PL spectrum in the energy range 1.50--2.12~eV was
-fitted with a pseudo-Voigt profile:
+\rev{At each temperature, the $X_A^0$ emission was fitted with a Voigt profile,
+the convolution of a Gaussian of standard deviation $\sigma$ and a Lorentzian of
+half-width $\gamma$, evaluated through the Faddeeva function $w(z)$:}
 
 \begin{equation}
 \label{eq:voigt}
-I(E) = I_0 \left[ \eta \, L(E; E_0, \gamma) + (1-\eta) \, G(E; E_0, \sigma) \right]
-+ B,
+V(E) = A\,\frac{\mathrm{Re}\,[w(z)]}{\sigma\sqrt{2\pi}}, \qquad
+z = \frac{E - E_0 + i\gamma}{\sigma\sqrt{2}},
 \end{equation}
 
-where $L$ and $G$ are normalized Lorentzian and Gaussian profiles centered at
-$E_0$, $\eta \in [0,1]$ is the Lorentzian fraction, $\gamma$ and $\sigma$ are
-the half-widths, and $B$ is a local background. The total Voigt FWHM is
-approximated by \cite{thompson-1987}:
+\rev{plus a constant background $B$. Below 125~K, where $X_A^0$ is spectrally
+isolated, a single Voigt profile was fitted within a $\pm$22~meV window centred
+on the peak position obtained at the previous temperature. From 125~K upwards,
+$X_A^0$ broadens into the lower-energy trion ($X^-$) emission, and the full
+measured spectral window was fitted with two Voigt profiles ($X_A^0$ and $X^-$)
+sharing a common background, with the $X^-$ amplitude constrained not to exceed
+that of $X_A^0$. The Gaussian and Lorentzian widths are
+$\Gamma_G = 2\sqrt{2\ln 2}\,\sigma$ and $\Gamma_L = 2\gamma$; the total FWHM
+$\Gamma_V$ of the $X_A^0$ component was obtained numerically from the
+half-maximum crossings of the fitted profile rather than from an approximate
+closed-form expression.}
 
-\begin{equation}
-\Gamma_V \approx 0.5346\,\Gamma_L
-+ \sqrt{0.2166\,\Gamma_L^2 + \Gamma_G^2},
-\end{equation}
-
-where $\Gamma_L = 2\gamma$ and $\Gamma_G = 2\sqrt{2\ln 2}\,\sigma$ are the
-Lorentzian and Gaussian FWHMs, respectively.
-
-Figure~\ref{fig:s4} shows representative Voigt fits at selected temperatures
-spanning the full range. The fitting residuals are shown in the lower panels.
+Figure~\ref{fig:s4} shows representative \rev{fits at twelve temperatures}
+spanning the full range.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.85\linewidth]{Figures/figS4_fit_quality_grid.png}
-  \caption{Representative pseudo-Voigt fits (solid lines) to the PL spectra
-    (symbols) of hBN-encapsulated \ce{WS2} at selected temperatures. The
-    Gaussian and Lorentzian components are shown as dashed blue and red lines,
-    respectively. Residuals are shown below each panel.}
-  \label{fig:s4}
+  \includegraphics[width=\linewidth]{Figures/figS4.png}
+  \caption{\rev{Representative Voigt fits to the PL spectra of hBN-encapsulated}
+    \ce{WS2} \rev{at twelve temperatures. Grey: data; red: fit. Below 125~K (5, 60
+    and 100~K) a single Voigt profile is fitted within $\pm$22~meV of $X_A^0$,
+    and only this window is shown. From 125~K upwards the fit (red) is the sum
+    of the $X_A^0$ (blue dashed) and $X^-$ (green dotted) components over the
+    full acquisition window. Each panel is normalised to the maximum of the
+    fit. At the highest temperatures the low-energy tail of the emission
+    extends beyond the acquisition window.}}
+\label{fig:s4}
 \end{figure}
 
 Note: the Gaussian and Lorentzian widths are strongly correlated in the fit,
@@ -333,8 +301,23 @@ degeneracy and all points are retained in the $E_0(T)$ dataset.
 Figure~\ref{fig:s5}(a) shows the total Voigt FWHM $\Gamma_V$ of the $X_A^0$
 emission as a function of temperature. The linewidth increases monotonically
 from $\sim$5.3~meV at 5~K to $\sim$140~meV at 1273~K, consistent with an
-increasing phonon-scattering-limited dephasing rate. The decomposition of
-the pseudo-Voigt profile (Eq.~\ref{eq:voigt}, Sec.~S4) into its Gaussian
+increasing phonon-scattering-limited dephasing rate. \rev{Over 5--1000~K the linewidth
+is well described by the phonon-scattering model
+$\Gamma(T) = \Gamma_0 + c_1 T + c_2/[\exp(\Omega/k_BT) - 1]$}
+\cite{selig-2016,moody-2015}\rev{, in which the linear term accounts for
+acoustic phonons and the last term for optical phonons of mean energy $\Omega$.
+The fit gives $\Gamma_0 = 5.5 \pm 1.0$~meV and $\Omega = 46 \pm 7$~meV, close
+to the E$^1_{2g}$ and A$_{1g}$ phonon energies of} \ce{WS2} \rev{($\sim$44 and
+$\sim$51~meV), while $c_1 = 9 \pm 15~\mu$eV/K is consistent with zero. Above
+$\sim$250~K the optical-phonon occupation grows nearly linearly with
+temperature, so the linewidth is well approximated by a straight line. A
+linear fit over 250--1000~K gives $0.129 \pm 0.002$~meV/K with an rms residual
+of 1.7~meV, slightly smaller than that of the model over the same range
+(1.9~meV); this linear relation is the thermometric indicator used in the main
+text. Above $\sim$1100~K the width levels off as the low-energy tail of the
+emission extends beyond the acquisition window} (Fig.~\ref{fig:s4})\rev{, and
+these points are excluded from both fits.} The decomposition of
+the \rev{Voigt} profile (Eq.~\ref{eq:voigt}, Sec.~S4) into its Gaussian
 ($\Gamma_G$) and Lorentzian ($\Gamma_L$) contributions is not reported here:
 the two components are strongly correlated in the fit and are not
 individually well determined over much of the temperature range.
@@ -358,20 +341,11 @@ maximum remains well inside the fitting window at all temperatures.
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS5a_FWHM_decomp.png}
-    \\ (a)
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS5b_eta_intensity.png}
-    \\ (b)
-  \end{minipage}
+  \includegraphics[width=\linewidth]{Figures/figS5.png}
   \caption{Temperature dependence of the PL linewidth and intensity.
     (a) Total Voigt FWHM $\Gamma_V$ of the $X_A^0$ emission versus
-    temperature.
+    temperature. \rev{Blue dashed line: phonon-scattering model fitted over
+    5--1000~K; red line: linear fit over 250--1000~K.}
     (b) Integrated $X_A^0$ PL intensity versus temperature, showing the
     thermally activated rise from the dark-exciton ground state below
     $\sim$175~K and the subsequent thermal quenching at higher temperature.}
@@ -402,6 +376,34 @@ limited here only by the operating range of the heater chip.
     annealing to 1000~$^\circ$C. The \ce{WS2} monolayer is no longer visible,
     confirming thermal dissociation near 1273~K through loss of sulfur species.}
   \label{fig:s6}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{\rev{S7. Raman Intensity and Excitonic Resonances}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rev{Figure} \ref{fig:s7} \rev{shows the integrated intensity of the
+E$^1_{2g}$+2LA band and the A$_{1g}$ mode versus temperature (arbitrary units,
+not comparable between the two samples). The temperature dependence reflects
+resonance Raman scattering} \cite{delcorro-2016}\rev{, which is strongest for
+the double-resonant 2LA(M) band} \cite{berkdemir-2013}. \rev{As the excitonic
+transitions redshift with temperature, the B exciton ($\sim$2.4~eV at room
+temperature}~\cite{zhu-2015}\rev{) crosses the excitation energy (2.410~eV),
+giving the sharp maximum near 225~K in the encapsulated sample and the maximum
+at 298~K in the non-encapsulated one. The recovery of both bands above
+$\sim$900~K in the encapsulated sample is attributed to the approach of the
+higher-lying C exciton resonance ($\sim$2.8~eV at room
+temperature}~\cite{zhu-2015}\rev{), a regime that the non-encapsulated
+monolayer does not reach because it dissociates above $\sim$1223~K} (Sec.~S6).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{Figures/figS7.png}
+  \caption{\rev{Integrated Raman intensity of the E$^1_{2g}$+2LA band (green
+    squares) and the A$_{1g}$ mode (purple circles) versus temperature for (a)
+    the non-encapsulated and (b) the hBN-encapsulated sample. Intensities are in
+    arbitrary units and are not comparable between the two samples.}}
+  \label{fig:s7}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

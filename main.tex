@@ -16,6 +16,12 @@
 \addbibresource{references.bib}
 
 \usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{soul}
+% Revision highlight for FC review; to remove, redefine as \newcommand{\rev}[1]{#1}
+\definecolor{revgreen}{RGB}{160,255,160}
+\sethlcolor{revgreen}
+\DeclareRobustCommand{\rev}[1]{\hl{#1}}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -82,7 +88,7 @@ an approach applicable to 2D semiconductors more broadly.
 
 The isolation of two-dimensional (2D) atomic crystals, beginning with graphene
 and extending to a broad family of layered compounds \cite{novoselov-2005}, has
-established a class of materials whose properties are set by their reduced
+established a class of materials whose \rev{unique} properties are set by their reduced
 dimensionality. Among them, monolayer transition metal dichalcogenides (TMDs)
 are direct-gap semiconductors whose optical response is dominated by tightly
 bound excitons even at room temperature \cite{mak-2010,splendiani-2010}. The
@@ -91,14 +97,14 @@ atomically-thin materials give exciton binding energies of several hundred meV
 and make the optical response acutely sensitive to the dielectric surroundings
 \cite{ugeda-2014,chernikov-2014}.
 
-High-temperature annealing is emerging as a route to defect engineering in 2D
-semiconductors: in monolayer \ce{MoS2} it generates chalcogen-vacancy defects
+High-temperature annealing \rev{of monolayers has been shown to be a promising} route
+to defect engineering in 2D semiconductors: in monolayer \ce{MoS2} it generates chalcogen-vacancy defects
 with characteristic optical signatures \cite{mitterreiter-2021}, and in
 hBN-encapsulated monolayer \ce{WS2} annealing near 1100~K produces ultra-narrow
 emission lines that act as single-photon emitters \cite{lee-2026d}. Controlling
 such processes requires reliable knowledge of the temperature of the 2D layer
-itself, which cannot be obtained by attaching a contact sensor to a layer one
-atom thick. The optical response of the monolayer offers a way out: both its
+itself, which cannot be obtained by attaching a contact sensor to a layer \rev{which
+is only} one atom thick. The optical response of the monolayer offers a way out: both its
 excitonic emission and its Raman spectrum shift measurably with temperature, so
 the spectrum itself can serve as a built-in, contact-free thermometer.
 
@@ -118,21 +124,17 @@ conditions has not been demonstrated to date.
 A key practical challenge is that high-power laser illumination, required for
 sufficient Raman signal in monolayer TMDs, induces strong photodoping in
 non-encapsulated samples, as established for the related molybdenum
-dichalcogenides \cite{cadiz-2016}, making PL inaccessible after Raman
+dichalcogenides \cite{cadiz-2016}, making \rev{neutral exciton} PL inaccessible after Raman
 acquisition. Encapsulation of the TMD monolayer between hexagonal boron nitride
 (hBN) layers suppresses this photodoping effect \cite{cadiz-2016} and
 dramatically narrows excitonic linewidths \cite{cadiz-2017,ajayi-2017}, enabling PL
-spectroscopy under the same conditions as Raman. The trade-off is a reduction in
-the Raman signal due to the additional hBN layers, leading to missing data points
-at certain temperatures. The two measurement configurations are therefore
-complementary rather than interchangeable.
+spectroscopy under the same conditions as Raman.
 
-In this work, we exploit this complementarity to establish an optical thermometry
+In this work, we establish an optical thermometry
 framework for monolayer \ce{WS2} spanning 5~K to 1273~K---a range that, to our
 knowledge, has not been covered by a single 2D material system in a single
 study. Both samples are mounted on a suspended SiC micro-heater membrane inside
-a cryostat, so that the monolayer can be heated locally while the surrounding
-environment stays cold. The refractory character of SiC allows the membrane to
+a cryostat, so that the monolayer can be heated locally. The refractory character of SiC allows the membrane to
 be operated repeatedly up to 1273~K, so that the same sample can be measured
 over the full range without changing the optical setup. The non-encapsulated sample gives the Raman thermal response from
 room temperature to 1223~K, while the hBN-encapsulated sample provides PL over
@@ -162,27 +164,28 @@ current by the manufacturer \cite{lee-2026d}.
 
 Two complementary temperature stages were used for the encapsulated sample.
 From 5~K to room temperature, the sample was cooled in a He-flow cryostat and
-heated uniformly using the cryostat's built-in heater. In this regime, the
-cryostat thermometer measures the temperature of the entire cold finger, which
-is in equilibrium with the sample. From room temperature to $\sim$1273~K, the
-SiC membrane was heated resistively under vacuum ($\sim$$10^{-3}$~mbar) while
-the cryostat environment remained at low temperature. The current-to-temperature
+heated uniformly using the cryostat's built-in heater. In this regime, \rev{a
+calibrated Cernox thermometer measures the temperature of the sample holder},
+which is in equilibrium with the sample. From room temperature to $\sim$1273~K, the
+SiC membrane was heated resistively under vacuum ($\sim$$10^{-3}$~mbar), \rev{with
+the cryostat cooling switched off so that the chip surroundings remained at room
+temperature, as required for the manufacturer's calibration}. The current-to-temperature
 conversion was obtained from the manufacturer's calibration. For the
-non-encapsulated sample, only high-temperature measurements were performed (room
-temperature to 1273~K under vacuum).
+non-encapsulated sample, \rev{only Raman measurements were performed, because of
+photodoping effects, from room temperature to 1223~K under vacuum}.
 
 \subsection{Optical Measurements}
 
 All measurements used a 514.5~nm continuous-wave laser (Cobolt). For Raman
 spectroscopy, the excitation power was $\sim$1~mW; for PL spectroscopy of the
 encapsulated sample, the power was reduced to $\lesssim$10~$\mu$W to avoid
-photo-induced heating. The laser was focused to a $\sim$1~$\mu$m spot through a
-50$\times$ long-working-distance objective. The scattered or emitted light was
+photo-induced heating. The laser was focused to a $\sim$1~$\mu$m spot through \rev{an
+apochromatic objective with a numerical aperture of 0.82}. The scattered or emitted light was
 collected by the same objective, filtered with volume Bragg notch filters centered
 at 514.5~nm (for Raman), and dispersed by a grating spectrometer onto a
-Peltier-cooled CCD. For each temperature step, the current was increased
-gradually, held at the target value for 30~min, and then reduced slowly back to
-zero before the next acquisition. PL spectra were fitted with a pseudo-Voigt
+Peltier-cooled CCD. \rev{Starting from room temperature, the heater current was
+increased gradually from one temperature step to the next, and Raman or PL
+spectra were acquired in situ at each step.} PL spectra were fitted with a \rev{Voigt}
 profile (see Supporting Information) to extract the peak energy $E_0$ and the
 total full-width at half-maximum (FWHM) at each temperature.
 
@@ -268,31 +271,36 @@ position can be determined unambiguously at every temperature.
 
 The hBN-encapsulated sample allows simultaneous Raman and PL measurements under
 identical laser conditions, since hBN encapsulation suppresses the photodoping
-that precludes PL in the non-encapsulated sample \cite{cadiz-2016}.
+that precludes \rev{neutral exciton} PL in the non-encapsulated sample \cite{cadiz-2016}.
 The Raman and PL data presented in this and the following section were acquired
 on the same encapsulated sample.
 
 Figure~\ref{fig:fig2}(b) shows the two-dimensional Raman intensity map of the
 encapsulated sample over the full temperature range from 5~K to
-1273~K. The overall signal level is reduced compared to the non-encap
-sample due to partial attenuation by the hBN layers. The map reveals a
+1273~K. \rev{The overall Raman signal is weaker than for the non-encapsulated
+sample. With a single sample of each type, we do not attribute this difference
+to encapsulation itself: the hBN/}\ce{WS2}\rev{/hBN stack on the thin SiC membrane
+forms a multilayer optical cavity in which interference of both the excitation
+and the scattered light depends on the layer thicknesses, so that the Raman
+signal can be either reduced or enhanced depending on the stack geometry.} The map reveals a
 temperature-dependent intensity redistribution between the two modes: at low
-temperature (below $\sim$100~K), the E$^1_{2g}$+2LA mode dominates; at high
+temperature (below \rev{$\sim$400~K}), the E$^1_{2g}$+2LA mode dominates; at high
 temperature, the A$_{1g}$ mode becomes the stronger feature; at intermediate
 temperatures both modes are weak, leading to gaps in the extracted peak
-positions. One factor that plausibly contributes to the redistribution is a
-change in resonance condition: at 514.5~nm, monolayer \ce{WS2} sits in a
-second-order Raman resonance that makes the 2LA(M) mode roughly twice as
-intense as the first-order A$_{1g}$($\Gamma$) mode, an enhancement specific to
-this excitation wavelength and governed by the electronic band structure
-\cite{berkdemir-2013}. Because the excitation energy is fixed while the
-electronic transitions of the sample redshift by $\sim$0.4~eV over the range
-studied (Fig.~\ref{fig:fig3}(b)), the detuning between the two changes
-continuously with temperature, and the second-order mode is expected to be far
-more sensitive to this than the first-order one. This alone does not account
-for the observation that \emph{both} modes weaken at intermediate temperatures,
-and the physical origin of the redistribution is under investigation and will
-be addressed in a forthcoming study.
+positions. \rev{This redistribution is consistent with a change in resonance
+condition. The excitation energy (2.410~eV) lies close to the B exciton of
+monolayer} \ce{WS2}\rev{, and Raman scattering in} \ce{WS2} \rev{is enhanced near
+the excitonic resonances} \cite{delcorro-2016}\rev{, most strongly for the
+double-resonant 2LA(M) band} \cite{berkdemir-2013}. \rev{As the excitonic
+transitions redshift with temperature, the E$^1_{2g}$+2LA intensity of the
+encapsulated sample peaks near 225~K, where the B exciton crosses the
+excitation energy, and both modes weaken as the detuning grows. The partial
+recovery above $\sim$900~K may reflect the approach of the higher-lying C
+exciton. This regime is not reached in the non-encapsulated sample, whose
+Raman signal vanishes above $\sim$1223~K as the monolayer dissociates
+(Supporting Information, Sec.~S6), whereas the encapsulated monolayer
+survives to 1273~K. A detailed analysis is given in the Supporting
+Information (Sec.~S7).}
 
 Despite the missing data points at intermediate temperatures,
 Fig.~\ref{fig:fig2}(c) (blue circles) shows that the A$_{1g}$ peak positions
@@ -415,10 +423,15 @@ FWHM increasing from $\sim$5.3~meV at 5~K to $\sim$140~meV at 1273~K
 reflects the quality of the hBN-encapsulated heterostructure
 \cite{cadiz-2017,ajayi-2017}, while the progressive broadening at higher
 temperature is consistent with an increasing phonon-scattering-limited
-dephasing rate \cite{selig-2016,moody-2015}. The linewidth is not used as a
-thermometric indicator here: it is strongly sample-dependent, and at the
-highest temperatures the peak extends beyond the low-energy edge of the
-fitting window, so that the width is no longer reliably determined.
+dephasing rate \cite{selig-2016,moody-2015}. \rev{Above $\sim$250~K the FWHM
+increases linearly with temperature, with a slope of $0.129 \pm 0.002$~meV/K
+($R^2 = 0.997$ over 250--1000~K; Supporting Information, Fig.~S5). The
+linewidth therefore provides an additional PL-based thermometric indicator:
+the rms residual of 1.7~meV corresponds to a temperature uncertainty of
+$\sim$13~K, comparable to that obtained from the peak energy. As for the peak
+energy and the Raman shift, the calibration is specific to the sample. Above
+$\sim$1100~K the width levels off as the low-energy tail of the peak extends
+beyond the fitting window, which sets the upper limit of this indicator.}
 
 \begin{figure}[H]
   \centering
@@ -462,21 +475,30 @@ is the range over which either calibration remains linear, from 100~K to
 The PL thermometer relies on the neutral-exciton peak energy, for which the
 Pässler model provides a physically grounded, analytic expression that can be
 inverted to yield temperature from a single spectral acquisition.
-Importantly, the PL thermometer extends the range to cryogenic temperatures (5~K),
+Importantly, the PL thermometer extends the range to cryogenic temperatures,
 which the Raman thermometer cannot easily access due to the difficulty of
 distinguishing small thermal shifts in the nearly temperature-independent phonon
 spectrum at low $T$.
 
-The two indicators are complementary in a specific sense. Below $\sim$100~K the
-Raman shift is too weakly temperature-dependent to resolve, whereas the PL peak
-energy still tracks temperature with sub-kelvin precision; PL is therefore the
-only usable indicator in the cryogenic regime. At high temperature the two are
-comparable: converting the peak-position uncertainty of each fitted spectrum
+The two indicators are complementary in a specific sense. \rev{In terms of
+sensitivity, the PL peak energy is by far the more responsive: in the linear
+regime it shifts by $\alpha \approx 0.37$~meV/K, compared with
+$|d\omega/dT| = 0.0121$~cm$^{-1}$/K ($\approx 1.5~\mu$eV/K) for the A$_{1g}$
+mode, corresponding to relative sensitivities $(1/X)|dX/dT|$ of
+$\approx 2\times10^{-4}$~K$^{-1}$ and $\approx 3\times10^{-5}$~K$^{-1}$,
+respectively. Between $\sim$80~K and room temperature, where the $X_A^0$ line
+is narrow, this yields a statistical temperature uncertainty below 1~K,}
+whereas the Raman shift is too weakly temperature-dependent to resolve below
+$\sim$100~K. \rev{Below $\sim$40~K, $dE_0/dT$ itself vanishes and the PL
+resolution degrades to several kelvin and more. At high temperature, the
+advantage in sensitivity is offset by the broadening of the PL line, which
+increases the uncertainty of the fitted peak position:} converting the
+peak-position uncertainty of each fitted spectrum
 into a temperature through the corresponding sensitivity ($\sigma_{E_0}/\alpha$
 for PL, $\sigma_\omega/|d\omega/dT|$ for Raman) gives, averaged over all points
 above 900~K, $\sim$12~K for PL and $\sim$13~K for Raman. The practical
 distinction there is
-not precision but sample configuration, since photodoping precludes PL on
+not precision but sample configuration, since photodoping precludes \rev{neutral exciton} PL on
 non-encapsulated samples \cite{cadiz-2016}, leaving the Raman shift as the only
 available indicator for bare monolayers.
 
@@ -491,6 +513,12 @@ extends over a range several times wider than in any of these studies.
 Departures from linearity are present but small: including a quadratic term
 changes the fitted frequency by at most 0.4~cm$^{-1}$ out of a total excursion
 of 12.5~cm$^{-1}$, so a single linear calibration is retained throughout.
+\rev{Other optical signatures of the same material can offer higher sensitivity
+over narrower windows: anti-Stokes (upconversion) PL in monolayer} \ce{WS2}
+\rev{reaches a relative sensitivity above 4\%~K$^{-1}$ between 300 and 425~K and
+has been used to map a thermal gradient across a single flake with $\sim$1~$\mu$m
+spatial resolution} \cite{nagarkar-2026}. \rev{The Stokes PL and Raman calibrations
+reported here are less sensitive but cover the full 5--1273~K range.}
 
 The two samples reach their upper limits for different reasons. The
 non-encapsulated monolayer dissociates through sulfur sublimation
@@ -502,7 +530,7 @@ rather than because the sample failed. hBN encapsulation therefore extends the
 thermal stability of the monolayer as well as its spectral quality.
 
 Two features of the platform make the extended range accessible: the suspended SiC membrane allows the monolayer to
-be heated locally while the surrounding cryostat stays cold, and hBN
+be heated locally, and hBN
 encapsulation sharpens the excitonic linewidth sufficiently for reliable peak
 fitting down to 5~K \cite{cadiz-2017,ajayi-2017}. The large exciton binding
 energy of monolayer \ce{WS2} ($\sim$300~meV) \cite{chernikov-2014} ensures a
@@ -523,14 +551,13 @@ $-0.0121~\mathrm{cm^{-1}/K}$ for the hBN-encapsulated heterostructure
 obtained on one configuration cannot be transferred to the other. The
 neutral-exciton PL peak energy, described by the Pässler model, provides a
 second indicator over the same range, with a fit residual corresponding to
-$\sim$21~K in the high-temperature regime.
+$\sim$21~K in the high-temperature regime\rev{; its linewidth, which increases
+linearly from 250 to 1000~K, provides an additional indicator with a
+comparable uncertainty of $\sim$13~K}.
 
-Two questions remain open. The origin of the temperature-dependent intensity
-redistribution between the E$^1_{2g}$+2LA doublet and the A$_{1g}$ mode, which
-removes both features at intermediate temperatures in the encapsulated sample,
-is still under investigation. And the upper limit reached here was set by the
+\rev{One question remains open:} the upper limit reached here was set by the
 heater chip rather than by the encapsulated monolayer, which survived 1273~K
-intact; how much further hBN encapsulation extends the usable range remains to
+intact\rev{, and} how much further hBN encapsulation extends the usable range remains to
 be established.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -560,7 +587,7 @@ Bandgap model comparison (Varshni, Pässler, O'Donnell--Chen) with fit
 residuals; (S4) Voigt fitting procedure and representative fit quality; (S5)
 Temperature dependence of the PL spectral linewidth and integrated $X_A^0$
 intensity; (S6) \ce{WS2} monolayer after thermal
-dissociation.
+dissociation\rev{; (S7) Raman intensity and excitonic resonances}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \printbibliography
