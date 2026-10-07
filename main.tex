@@ -18,10 +18,13 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{soul}
-% Revision highlight for FC review; to remove, redefine as \newcommand{\rev}[1]{#1}
-\definecolor{revgreen}{RGB}{160,255,160}
-\sethlcolor{revgreen}
-\DeclareRobustCommand{\rev}[1]{\hl{#1}}
+% Revision highlights for FC review.
+% \rev  = v1->v2 changes (highlight turned off; was green)
+% \revB = v2->v3 changes (blue). To remove, redefine as \newcommand{\revB}[1]{#1}
+\definecolor{revblue}{RGB}{160,210,255}
+\sethlcolor{revblue}
+\DeclareRobustCommand{\rev}[1]{#1}
+\DeclareRobustCommand{\revB}[1]{\hl{#1}}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -66,14 +69,13 @@ characterizing and engineering two-dimensional (2D) semiconductor devices, yet
 optical thermometry of 2D materials has so far been demonstrated only over
 narrow temperature windows spanning a few hundred kelvin. Here, we establish a comprehensive optical
 thermometry framework for monolayer \ce{WS2} from 5~K to 1273~K.
-Using two independent optical probes on
-complementary samples, we show that: (i) the out-of-plane
+\revB{We show that:} (i) the out-of-plane
 A$_{1g}$ Raman mode shifts linearly with temperature above 100~K, with
-non-encapsulated \ce{WS2} exhibiting a slope of $-0.0138~\mathrm{cm^{-1}/K}$
-(fitted over 298--1223~K) and hBN-encapsulated samples a measurably smaller
-slope of $-0.0121~\mathrm{cm^{-1}/K}$ (fitted over 100--1273~K);
+\revB{a slope of $-0.0138~\mathrm{cm^{-1}/K}$ in non-encapsulated} \ce{WS2}
+(fitted over 298--1223~K) and \revB{a measurably smaller slope of
+$-0.0121~\mathrm{cm^{-1}/K}$ in an hBN-encapsulated sample} (fitted over 100--1273~K);
 (ii) photoluminescence spectra measured over the same 5--1273~K range provide
-an independent optical indicator: the neutral-exciton emission $X_A^0$
+an independent optical indicator \revB{of the temperature}: the neutral-exciton emission $X_A^0$
 redshifts continuously with temperature and is well described by the
 semi-empirical Pässler model. The two indicators probe distinct physical
 mechanisms, lattice anharmonicity and bandgap renormalization, and together
@@ -104,7 +106,7 @@ hBN-encapsulated monolayer \ce{WS2} annealing near 1100~K produces ultra-narrow
 emission lines that act as single-photon emitters \cite{lee-2026d}. Controlling
 such processes requires reliable knowledge of the temperature of the 2D layer
 itself, which cannot be obtained by attaching a contact sensor to a layer \rev{which
-is only} one atom thick. The optical response of the monolayer offers a way out: both its
+is only} \revB{a few atoms} thick. The optical response of the monolayer offers a way out: both its
 excitonic emission and its Raman spectrum shift measurably with temperature, so
 the spectrum itself can serve as a built-in, contact-free thermometer.
 
@@ -140,7 +142,7 @@ over the full range without changing the optical setup. The non-encapsulated sam
 room temperature to 1223~K, while the hBN-encapsulated sample provides PL over
 the full range together with complementary Raman data. Calibrating both
 signatures against a known temperature turns the spectrum itself into the
-thermometer: a single Raman or PL acquisition then reports the temperature of
+thermometer: \revB{changes in the Raman or PL signatures then report} the temperature of
 the monolayer at that spot.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -250,7 +252,7 @@ position can be determined unambiguously at every temperature.
   \centering
   \includegraphics[width=\linewidth]{Figures/fig1.png}
   \caption{\textbf{Experimental platform and reference spectra.}
-    (a) Schematic of the in-situ measurement platform: hBN/\ce{WS2}/hBN
+    (a) Schematic of the in-situ measurement \revB{setup}: hBN/\ce{WS2}/hBN
     heterostructure transferred onto the suspended SiC micro-membrane of the
     micro-heater chip, mounted inside a cryostat.
     (b) Optical image of the encapsulated \ce{WS2} flake on the SiC membrane
@@ -357,8 +359,10 @@ independent measurement of the residual strain and is left for future work.
 
 \textbf{Spectral evolution and peak energy.}
 Figure~\ref{fig:fig3}(a) shows the evolution of the PL spectrum of the
-hBN-encapsulated \ce{WS2} monolayer, plotted as a waterfall of six
-representative spectra spanning 5~K to 1023~K. At 5~K the emission is dominated
+hBN-encapsulated \ce{WS2} monolayer \revB{through ten representative
+spectra, each normalized to its own maximum, spanning 5~K to 1273~K}\revB{; all
+measured spectra are shown as a two-dimensional map in Supporting Information,
+Fig.~S3(a)}. At 5~K the emission is dominated
 by lower-lying excitonic complexes, and the neutral exciton $X_A^0$ at
 $E_0 = 2.052$~eV, with a narrow Voigt linewidth of $\sim$5.3~meV, is one of the
 weakest features of the spectrum (Fig.~\ref{fig:fig1}(d)). This reflects the
@@ -404,7 +408,7 @@ underestimates the curvature at low temperature.
 
 The inversion of Eq.~\eqref{eq:passler} allows the temperature to be read
 directly from the measured $E_0$, providing a model-based, contact-free
-thermometer calibrated against the cryostat (5~K to RT) and the manufacturer's
+thermometer calibrated against the cryostat\revB{'s Cernox thermometer} (5~K to RT) and the manufacturer's
 chip calibration (RT to 1273~K). The practical lower limit of this PL
 thermometer is set by the spectral resolution of the detection system. Towards
 higher temperature, the $X_A^0$ peak broadens substantially (from
@@ -419,13 +423,15 @@ is larger at cryogenic temperature, where $dE_0/dT \to 0$.
 \textbf{Spectral linewidth.}
 The $X_A^0$ emission broadens monotonically with temperature, the total Voigt
 FWHM increasing from $\sim$5.3~meV at 5~K to $\sim$140~meV at 1273~K
-(Supporting Information, Fig.~S5). The narrow low-temperature linewidth
+(\revB{Fig.~}\ref{fig:fig3}\revB{(c)}). The narrow low-temperature linewidth
 reflects the quality of the hBN-encapsulated heterostructure
 \cite{cadiz-2017,ajayi-2017}, while the progressive broadening at higher
 temperature is consistent with an increasing phonon-scattering-limited
-dephasing rate \cite{selig-2016,moody-2015}. \rev{Above $\sim$250~K the FWHM
+dephasing rate \cite{selig-2016,moody-2015}\revB{; a fit of the full
+5--1000~K dependence with a phonon-scattering model is given in Supporting
+Information, Fig.~S5}. \rev{Above $\sim$250~K the FWHM
 increases linearly with temperature, with a slope of $0.129 \pm 0.002$~meV/K
-($R^2 = 0.997$ over 250--1000~K; Supporting Information, Fig.~S5). The
+($R^2 = 0.997$ over 250--1000~K; \revB{Fig.~}\ref{fig:fig3}\revB{(c)}). The
 linewidth therefore provides an additional PL-based thermometric indicator:
 the rms residual of 1.7~meV corresponds to a temperature uncertainty of
 $\sim$13~K, comparable to that obtained from the peak energy. As for the peak
@@ -436,16 +442,19 @@ beyond the fitting window, which sets the upper limit of this indicator.}
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{Figures/fig3.png}
-  \caption{\textbf{Photoluminescence thermal indicator in hBN-encapsulated monolayer
+  \caption{\textbf{Photoluminescence thermal indicator\revB{s} in hBN-encapsulated monolayer
     \ce{WS2}.}
-    (a) Waterfall plot of representative PL spectra (5~K to 1023~K) as a
-    function of photon energy, normalized to the peak intensity at each
-    temperature, overlaid on the full temperature-dependent intensity map. The
-    $X_A^0$ neutral-exciton peak, visible at low temperature, redshifts and
+    (a) \revB{Representative PL spectra from 5~K to 1273~K, each normalized to
+    its own maximum. Arrows mark the $X_A^0$ energy obtained from Voigt fits;
+    below $\sim$100~K the trion and localized-exciton lines on its low-energy
+    side are stronger than $X_A^0$.} The
+    $X_A^0$ peak redshifts and
     broadens continuously with increasing temperature.
-    (b) Neutral-exciton peak energy $E_0$ extracted from Voigt fits (black
+    (b) \revB{$X_A^0$ peak energy $E_0$ versus temperature from} Voigt fits (black
     squares, with error bars) and the Pässler model fit (blue line),
-    Eq.~\eqref{eq:passler}, with best-fit parameters and fit quality annotated.}
+    Eq.~\eqref{eq:passler}\revB{; $\alpha$ is the high-temperature slope.}
+    \revB{(c) Total Voigt FWHM of $X_A^0$ versus temperature (squares) and a
+    linear fit over 250--1000~K (red line).}}
   \label{fig:fig3}
 \end{figure}
 
@@ -530,7 +539,8 @@ rather than because the sample failed. hBN encapsulation therefore extends the
 thermal stability of the monolayer as well as its spectral quality.
 
 Two features of the platform make the extended range accessible: the suspended SiC membrane allows the monolayer to
-be heated locally, and hBN
+be heated locally \revB{without defocusing or producing a spatial shift of the
+flake under the laser spot}, and hBN
 encapsulation sharpens the excitonic linewidth sufficiently for reliable peak
 fitting down to 5~K \cite{cadiz-2017,ajayi-2017}. The large exciton binding
 energy of monolayer \ce{WS2} ($\sim$300~meV) \cite{chernikov-2014} ensures a
@@ -548,10 +558,10 @@ A$_{1g}$ Raman mode shifts linearly with temperature above 100~K, with slopes
 of $-0.0138~\mathrm{cm^{-1}/K}$ for the bare monolayer (298--1223~K) and
 $-0.0121~\mathrm{cm^{-1}/K}$ for the hBN-encapsulated heterostructure
 (100--1273~K); the 12\% difference between them means that a calibration
-obtained on one configuration cannot be transferred to the other. The
+obtained on one configuration cannot be transferred \revB{directly} to the other. The
 neutral-exciton PL peak energy, described by the Pässler model, provides a
 second indicator over the same range, with a fit residual corresponding to
-$\sim$21~K in the high-temperature regime\rev{; its linewidth, which increases
+\revB{an uncertainty of} $\sim$21~K in the high-temperature regime\rev{; its linewidth, which increases
 linearly from 250 to 1000~K, provides an additional indicator with a
 comparable uncertainty of $\sim$13~K}.
 
@@ -564,7 +574,9 @@ be established.
 \section*{Acknowledgements}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We thank QCMX for sample preparation assistance.
+\revB{We thank Hadrien Duprez for demonstrating the sample fabrication
+procedure, and Samy Annabi and Hannes Riechert for their help with wire
+bonding of the samples.}
 FC acknowledges support from the European Research Council (ERC Starting Grant
 OneSPIN, Grant No.\ 101075855). We also acknowledge financial support from
 DEEP2D (ANR-22-CE09-0013).
@@ -583,8 +595,7 @@ Zenodo upon publication.
 The Supporting Information contains: (S1) Individual versus merged-peak
 fitting of the E$^1_{2g}$+2LA Raman doublet for both samples; (S2)
 Temperature-dependent Raman spectra of the hBN-encapsulated sample; (S3)
-Bandgap model comparison (Varshni, Pässler, O'Donnell--Chen) with fit
-residuals; (S4) Voigt fitting procedure and representative fit quality; (S5)
+Bandgap model comparison (Varshni, Pässler, O'Donnell--Chen); (S4) Voigt fitting procedure and representative fit quality; (S5)
 Temperature dependence of the PL spectral linewidth and integrated $X_A^0$
 intensity; (S6) \ce{WS2} monolayer after thermal
 dissociation\rev{; (S7) Raman intensity and excitonic resonances}.

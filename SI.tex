@@ -14,10 +14,13 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{soul}
-% Revision highlight for FC review; to remove, redefine as \newcommand{\rev}[1]{#1}
-\definecolor{revgreen}{RGB}{160,255,160}
-\sethlcolor{revgreen}
-\DeclareRobustCommand{\rev}[1]{\hl{#1}}
+% Revision highlights for FC review (same scheme as main.tex).
+% \rev  = v1->v2 changes (highlight turned off; was green)
+% \revB = v2->v3 changes (blue). To remove, redefine as \newcommand{\revB}[1]{#1}
+\definecolor{revblue}{RGB}{160,210,255}
+\sethlcolor{revblue}
+\DeclareRobustCommand{\rev}[1]{#1}
+\DeclareRobustCommand{\revB}[1]{\hl{#1}}
 \usepackage{float}
 \usepackage{amsmath}
 \usepackage{booktabs}
@@ -163,7 +166,10 @@ offset between heating and cooling.}
 \section*{S3. Comparison of Bandgap Temperature Models}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Three empirical and semi-empirical models for the temperature dependence of
+\revB{Figure}~\ref{fig:s3}\revB{(a) shows all PL spectra of the hBN-encapsulated
+sample from 5 to 1273~K as a two-dimensional map, each spectrum normalized to
+its own maximum; Fig.~3(a) of the main text shows ten of them. The spectrum
+at the 1073~K step is omitted (Sec.~S4).} Three empirical and semi-empirical models for the temperature dependence of
 the bandgap energy were fitted to the neutral-exciton peak energy $E_0(T)$
 extracted from Voigt fits of the PL spectra. The main text uses the Pässler
 model (Eq.~2); the two alternative models below are compared against it here.
@@ -186,37 +192,33 @@ where $S$ is a dimensionless Huang--Rhys-like electron--phonon coupling
 strength and $\hbar\omega$ is the mean phonon energy. At high temperature this
 model is linear in $T$, with slope $2 S k_B$.
 
-Figure~\ref{fig:s3} shows all three model fits (Pässler included for
-reference) to the data together with the corresponding residuals. The fitted
+Figure~\ref{fig:s3}\revB{(b)} shows all three model fits (Pässler included for
+reference) to the data\revB{;} the fitted
 parameters and goodness-of-fit metrics are summarized in
-Table~\ref{tab:s1}. The Varshni model systematically overestimates the
-energy at low temperature, while both the Pässler and O'Donnell--Chen
-models -- which share the same physically-motivated saturation to a
-temperature-independent phonon population at low $T$ -- reproduce the data
-to within the experimental uncertainty over the full range.
+Table~\ref{tab:s1}. \revB{On the full scale the three curves are nearly
+indistinguishable, because the gap shifts by $\sim$400~meV over this range
+while the models differ by only $\sim$10~meV; the inset shows the 0--250~K
+region, where they separate. The Varshni model lies above the data below
+$\sim$60~K, as it lacks the low-temperature saturation built into the other
+two models, whereas the Pässler and O'Donnell--Chen models lie slightly above
+the data between $\sim$100 and 250~K. Above $\sim$400~K the three models are
+equivalent within the scatter of the data. All three share the same slow drift
+of the residuals, of up to about $\pm$15~meV, reaching about $+$24~meV at
+1273~K, where the broadened line makes the peak position harder to determine;
+since this drift is common to all three models, it reflects the data rather
+than the choice of model.}
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS3a_E0_model_combined.png}
-    \\ (a)
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.48\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{Figures/figS3b_E0_model_residuals.png}
-    \\ (b)
-  \end{minipage}
-  \caption{Comparison of bandgap temperature models fitted to the
+  \includegraphics[width=\linewidth]{Figures/figS3.png}
+  \caption{\revB{Temperature-dependent PL and} comparison of bandgap temperature models fitted to the
     neutral-exciton peak energy of hBN-encapsulated \ce{WS2}.
-    (a) Experimental $E_0(T)$ (symbols) and fits using the Varshni
-    (dashed red), Pässler (solid blue), and O'Donnell--Chen (dash-dot orange)
-    models.
-    (b) Fit residuals (data $-$ model) in meV for each model, showing that the
-    Varshni model systematically overestimates the energy at low temperature,
-    while both the Pässler and O'Donnell--Chen models fit the data to within the
-    experimental uncertainty over the full range.}
+    \revB{(a) Two-dimensional map of the PL intensity from 5 to 1273~K, each
+    temperature normalized to its own maximum.}
+    \revB{(b)} Experimental $E_0(T)$ (symbols) and fits using the Varshni
+    (\revB{solid} red), Pässler (\revB{dashed} blue), and O'Donnell--Chen (dash-dot orange)
+    models. \revB{On this scale the three curves coincide; the inset shows the
+    0--250~K region, where they diverge.}}
   \label{fig:s3}
 \end{figure}
 
@@ -227,7 +229,7 @@ to within the experimental uncertainty over the full range.
     neutral-exciton $X_A^0$ peak energy).}
   \label{tab:s1}
   % Transposed (models as columns) so the table fits the text width.
-  \begin{tabular}{lccc}
+  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lccc}
     \toprule
      & Varshni & Pässler & O'Donnell--Chen \\
     \midrule
@@ -242,7 +244,7 @@ to within the experimental uncertainty over the full range.
     $R^2$                     & 0.9952              & 0.9964              & 0.9961 \\
     RMSE (meV)                & 9.18                & 7.94                & 8.34 \\
     \bottomrule
-  \end{tabular}
+  \end{tabular*}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -269,7 +271,10 @@ that of $X_A^0$. The Gaussian and Lorentzian widths are
 $\Gamma_G = 2\sqrt{2\ln 2}\,\sigma$ and $\Gamma_L = 2\gamma$; the total FWHM
 $\Gamma_V$ of the $X_A^0$ component was obtained numerically from the
 half-maximum crossings of the fitted profile rather than from an approximate
-closed-form expression.}
+closed-form expression.} \revB{The spectrum recorded at the 1073~K step, whose
+$X_A^0$ peak did not shift from the 1023~K step and which has the lowest
+signal-to-noise ratio among the high-temperature spectra, is excluded from the
+analysis.}
 
 Figure~\ref{fig:s4} shows representative \rev{fits at twelve temperatures}
 spanning the full range.
@@ -301,20 +306,28 @@ degeneracy and all points are retained in the $E_0(T)$ dataset.
 Figure~\ref{fig:s5}(a) shows the total Voigt FWHM $\Gamma_V$ of the $X_A^0$
 emission as a function of temperature. The linewidth increases monotonically
 from $\sim$5.3~meV at 5~K to $\sim$140~meV at 1273~K, consistent with an
-increasing phonon-scattering-limited dephasing rate. \rev{Over 5--1000~K the linewidth
+increasing phonon-scattering-limited dephasing rate. \revB{The values at 5~K
+and 292~K (5.3 and 21.8~meV) are close to the 4.3--4.8~meV (4~K) and
+23--25~meV (292~K) reported for hBN-encapsulated} \ce{WS2} \revB{monolayers}~\cite{cadiz-2017}
+\revB{(open triangles in Fig.~S5(a)), indicating comparable sample quality.} \rev{Over 5--1000~K the linewidth
 is well described by the phonon-scattering model
 $\Gamma(T) = \Gamma_0 + c_1 T + c_2/[\exp(\Omega/k_BT) - 1]$}
 \cite{selig-2016,moody-2015}\rev{, in which the linear term accounts for
 acoustic phonons and the last term for optical phonons of mean energy $\Omega$.
-The fit gives $\Gamma_0 = 5.5 \pm 1.0$~meV and $\Omega = 46 \pm 7$~meV, close
+The fit gives $\Gamma_0 = 5.5 \pm 1.0$~meV, \revB{$c_2 = 70 \pm 6$~meV,} and $\Omega = 46 \pm 7$~meV, close
 to the E$^1_{2g}$ and A$_{1g}$ phonon energies of} \ce{WS2} \rev{($\sim$44 and
-$\sim$51~meV), while $c_1 = 9 \pm 15~\mu$eV/K is consistent with zero. Above
+$\sim$51~meV). \revB{Over this wide range $c_1$ is strongly correlated with
+$\Omega$ and is not well constrained by the fit; it is better determined from
+the low-temperature data, where optical phonons are not yet populated. A linear
+fit of the FWHM over 5--100~K gives $24 \pm 3~\mu$eV/K, close to the value of
+28~$\mu$eV/K calculated for} \ce{WS2}~\cite{selig-2016} \revB{and of the same
+order as the 61--70~$\mu$eV/K measured in hBN-encapsulated} \ce{MoS2}~\cite{cadiz-2017}. Above
 $\sim$250~K the optical-phonon occupation grows nearly linearly with
 temperature, so the linewidth is well approximated by a straight line. A
-linear fit over 250--1000~K gives $0.129 \pm 0.002$~meV/K with an rms residual
-of 1.7~meV, slightly smaller than that of the model over the same range
-(1.9~meV); this linear relation is the thermometric indicator used in the main
-text. Above $\sim$1100~K the width levels off as the low-energy tail of the
+linear fit over 250--1000~K \revB{(main text, Fig.~3(c))} gives $0.129 \pm 0.002$~meV/K with an rms residual
+of 1.7~meV, \revB{comparable to} that of the \revB{phonon-scattering} model over the same range
+(1.9~meV)\revB{, so this linear relation can be used as a thermometric
+indicator, as done in the main text.} Above $\sim$1100~K the width levels off as the low-energy tail of the
 emission extends beyond the acquisition window} (Fig.~\ref{fig:s4})\rev{, and
 these points are excluded from both fits.} The decomposition of
 the \rev{Voigt} profile (Eq.~\ref{eq:voigt}, Sec.~S4) into its Gaussian
@@ -344,8 +357,11 @@ maximum remains well inside the fitting window at all temperatures.
   \includegraphics[width=\linewidth]{Figures/figS5.png}
   \caption{Temperature dependence of the PL linewidth and intensity.
     (a) Total Voigt FWHM $\Gamma_V$ of the $X_A^0$ emission versus
-    temperature. \rev{Blue dashed line: phonon-scattering model fitted over
-    5--1000~K; red line: linear fit over 250--1000~K.}
+    temperature (\revB{grey bars: fit uncertainty}). \revB{Red line:
+    phonon-scattering model fitted over 5--1000~K, with the fitted parameters.
+    Open triangles: linewidths reported for hBN-encapsulated} \ce{WS2}
+    \revB{monolayers}~\cite{cadiz-2017}\revB{, plotted at the midpoint of the
+    quoted ranges.}
     (b) Integrated $X_A^0$ PL intensity versus temperature, showing the
     thermally activated rise from the dark-exciton ground state below
     $\sim$175~K and the subsequent thermal quenching at higher temperature.}
@@ -369,7 +385,7 @@ limited here only by the operating range of the heater chip.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{Figures/dissociation.png}
+  \includegraphics[width=\linewidth]{Figures/figS6.png}
   \caption{Thermal dissociation of monolayer \ce{WS2}.
     Optical images of the SiC membrane (a) before annealing, showing an
     exfoliated \ce{WS2} monolayer flake (dashed outline), and (b) after
@@ -389,8 +405,9 @@ resonance Raman scattering} \cite{delcorro-2016}\rev{, which is strongest for
 the double-resonant 2LA(M) band} \cite{berkdemir-2013}. \rev{As the excitonic
 transitions redshift with temperature, the B exciton ($\sim$2.4~eV at room
 temperature}~\cite{zhu-2015}\rev{) crosses the excitation energy (2.410~eV),
-giving the sharp maximum near 225~K in the encapsulated sample and the maximum
-at 298~K in the non-encapsulated one. The recovery of both bands above
+giving the sharp maximum near 225~K in the encapsulated sample\revB{, whereas
+only the high-energy side of this resonance is observed in the non-encapsulated
+one, for which measurements started at 298~K.} The recovery of both bands above
 $\sim$900~K in the encapsulated sample is attributed to the approach of the
 higher-lying C exciton resonance ($\sim$2.8~eV at room
 temperature}~\cite{zhu-2015}\rev{), a regime that the non-encapsulated
