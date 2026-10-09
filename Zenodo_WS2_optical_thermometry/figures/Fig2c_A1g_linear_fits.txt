@@ -1,0 +1,4 @@
+# Linear fits of the A1g position, T >= 100 K (unweighted)
+sample	slope(cm-1/K)	slope_err(cm-1/K)	intercept(cm-1)	R2	n
+hBN-encapsulated	-0.01211	0.00011	419.551	0.9973	34
+non-encapsulated	-0.01384	0.00022	417.951	0.9955	20

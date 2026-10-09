@@ -1,0 +1,5 @@
+# Fits of the FWHM (unweighted)
+linear 250-1000 K (Fig. 3c): slope = 0.1289 +/- 0.0017 meV/K, intercept = -16.938 meV, R2 = 0.9967, rms residual = 1.737 meV, n = 21
+phonon-scattering model 5.15-1000 K (SI Fig. S5a): Gamma(T) = Gamma0 + c1*T + c2/(exp(Omega/kB T) - 1)
+  Gamma0 = 5.541 +/- 0.988 meV, c1 = 8.7 +/- 15.0 ueV/K, c2 = 70.01 +/- 6.10 meV, Omega = 46.08 +/- 7.03 meV, rms residual = 1.532 meV
+linear 5.15-100 K (acoustic-phonon coefficient c1, SI text): slope = 24.3 +/- 3.0 ueV/K, n = 7

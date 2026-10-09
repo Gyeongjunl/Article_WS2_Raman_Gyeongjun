@@ -1,0 +1,32 @@
+# Models (T in K, energies in eV, kB = 8.617333e-5 eV/K):
+#   Varshni:        E(T) = E0 - alpha*T^2/(T + beta)
+#   Passler:        E(T) = E0 - (alpha*Theta/2)*[(1 + (2T/Theta)^p)^(1/p) - 1]
+#   O'Donnell-Chen: E(T) = E0 - S*hw*[coth(hw/(2 kB T)) - 1]   (hw converted to eV)
+#
+# Bandgap model fits — X0 peak energy (fit_PL__E0_vs_T.dat)
+# Weighted least-squares
+
+==================================================
+Model: Varshni
+  R²   = 0.995228
+  RMSE = 9.1796 meV
+  E0   = 2.05784 ± 0.00373 eV
+  alpha= 3.9076e-04 ± 1.1559e-05 eV/K
+  beta = 185.16 ± 41.43 K
+
+==================================================
+Model: Passler
+  R²   = 0.996433
+  RMSE = 7.9370 meV
+  E0   = 2.04908 ± 0.00360 eV
+  alpha= 3.7410e-04 ± 6.8609e-06 eV/K
+  Theta= 280.09 ± 28.83 K
+  p    = 4.0360 ± 2.2278
+
+==================================================
+Model: O'Donnell-Chen
+  R²   = 0.996065
+  RMSE = 8.3361 meV
+  E0   = 2.05138 ± 0.00339 eV
+  S    = 2.2101 ± 0.0379
+  hw   = 27.271 ± 3.380 meV

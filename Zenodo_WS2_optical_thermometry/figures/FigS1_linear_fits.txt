@@ -1,0 +1,6 @@
+# Linear fits drawn in SI Fig. S1 (unweighted)
+panel	sample	peak	T_range(K)	slope(cm-1/K)	slope_err(cm-1/K)	intercept(cm-1)	R2	n
+a	non-encapsulated	E2g	>=600	-0.01737	0.00028	359.451	0.9971	13
+b	non-encapsulated	2LA	>=600	-0.01367	0.00027	345.851	0.9957	13
+c	non-encapsulated	E2g+2LA merged	>=500	-0.01792	0.00020	357.844	0.9984	15
+f	hBN-encapsulated	E2g+2LA merged, all runs	>=250	-0.01138	0.00074	353.767	0.9147	24

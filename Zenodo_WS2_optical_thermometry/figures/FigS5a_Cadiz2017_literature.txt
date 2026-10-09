@@ -1,0 +1,3 @@
+T(K)	FWHM_reported_min(meV)	FWHM_reported_max(meV)	FWHM_plotted_midpoint(meV)
+4	4.3	4.8	4.55
+292	23	25	24
