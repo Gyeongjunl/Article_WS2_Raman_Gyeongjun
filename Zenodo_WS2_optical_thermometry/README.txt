@@ -28,29 +28,13 @@ SAMPLES AND MEASUREMENTS
   manufacturer's current-to-temperature calibration.
 - Excitation: 514.5 nm cw laser, ~1 mW for Raman, <= 10 uW for PL, ~1 um spot,
   objective NA 0.82, grating spectrometer with Peltier-cooled CCD.
-- raw/ Raman spectra are as recorded. raw/ PL spectra are as recorded, except
-  that at high temperature the thermal emission of the heated membrane,
-  measured with the laser blocked, has been subtracted.
-
-
-raw/  MEASURED SPECTRA
-----------------------
-PL_encap_5-1273K.txt
-    T(K), Energy(eV), PL_intensity(a.u.). Long format: the spectrometer was
-    re-centred as the emission shifted, so each temperature has its own energy
-    axis. 39 temperature steps.
-    NOTE: the 1073 K step is excluded from all analyses in the paper. Although
-    the heater current was increased from the 1023 K step, its X_A^0 peak did
-    not shift, and it has the lowest signal-to-noise ratio of the
-    high-temperature spectra, so a reliable temperature cannot be assigned to
-    it (SI Sec. S4).
-Raman_encap_LT_5-295K.txt              LT (cryostat), 15 temperatures
-Raman_encap_heatup1_293-1273K.txt      1st heat-up on the micro-heater
-Raman_encap_cooldown_1273-298K.txt     cooldown after the 1st heat-up
-Raman_encap_heatup2_298-1023K.txt      2nd heat-up
-Raman_nonencap_298-1273K.txt           non-encapsulated sample, 21 temperatures
-    Raman_shift(cm-1) followed by one intensity column per temperature.
-    Negative shifts are the anti-Stokes side.
+- At high temperature, the thermal emission of the heated membrane, measured
+  with the laser blocked, was subtracted from the PL spectra.
+- The PL spectrum at the 1073 K step is excluded from all analyses: although
+  the heater current was increased from the 1023 K step, its X_A^0 peak did
+  not shift, and it has the lowest signal-to-noise ratio of the
+  high-temperature spectra, so a reliable temperature cannot be assigned to
+  it (SI Sec. S4).
 
 
 figures/  VALUES PLOTTED IN EACH FIGURE
